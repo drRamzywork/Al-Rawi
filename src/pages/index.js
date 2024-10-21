@@ -71,7 +71,6 @@ export default function HomePage() {
         <meta name="twitter:description" content={SiteDescription} />
       </Head>
 
-      {/* <VideoPlayer /> */}
       <DraggableBox />
     </>
   );
