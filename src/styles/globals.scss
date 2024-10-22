@@ -126,6 +126,10 @@ body {
   background-color: #ffffff1a !important;
   backdrop-filter: blur(70px);
   border: 1px solid #ffffff4d !important;
+
+  @media screen and (max-width: 992px) {
+    width: 100%;
+  }
 }
 
 .TitleSection {
