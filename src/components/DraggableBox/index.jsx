@@ -1019,11 +1019,11 @@ function BottomSheet({ isClosed, setIsClosed, currentVideo
       <div className="btns_container">
 
         <button className={currentVideo === 'https://toot.one/rawai/2.mp4' ? 'active' : ''}
-          onClick={() => { setCurrentVideo('https://toot.one/rawai/2.mp4'); setIsClosed(true); setMuted(false) }}> الى أي العصور يعود قصر عروة ؟</button>
+          onClick={() => { setCurrentVideo('https://toot.one/rawai/2.mp4'); setIsClosed(true); setMuted(false) }}> إلي أي العصور يعود قصر عروة ؟</button>
         <button className={currentVideo === 'https://toot.one/rawai/3.mp4' ? 'active' : ''}
           onClick={() => { setCurrentVideo('https://toot.one/rawai/3.mp4'); setIsClosed(true); setMuted(false) }}> أين تقع قصور عروة بن الزبير ؟</button>
         <button className={currentVideo === 'https://toot.one/rawai/4.mp4' ? 'active' : ''}
-          onClick={() => { setCurrentVideo('https://toot.one/rawai/4.mp4'); setIsClosed(true); setMuted(false) }}>ما هي أهم المعالم الأثرية ف قصور عروة بن الزبير ؟</button>
+          onClick={() => { setCurrentVideo('https://toot.one/rawai/4.mp4'); setIsClosed(true); setMuted(false) }}>ما هي أهم المعالم الأثرية في قصور عروة بن الزبير؟</button>
       </div>
 
     </motion.div >
