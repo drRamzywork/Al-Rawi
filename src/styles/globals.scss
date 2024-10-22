@@ -110,13 +110,10 @@ a {
 }
 
 body {
-  position: absolute;
-  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #e5e5e5;
-  margin: 0;
   font-family: var(--effra-font);
 }
 
