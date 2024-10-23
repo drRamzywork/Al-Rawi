@@ -206,6 +206,13 @@ body {
   padding: 0 16px;
 }
 
+#menu {
+  .Navbar {
+    margin-bottom: 0 !important;
+    justify-content: center !important;
+  }
+}
+
 .CloseIcon {
   color: #616161;
   transition: color 0.2s ease;
