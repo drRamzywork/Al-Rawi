@@ -117,21 +117,21 @@ const Menu = ({
         </div>
         <div className={styles.options}>
           <ul>
-            <li>
+            <li onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/3.mp4'); setShowElements(false); setMuted(false) }}>
               <div className={styles.icon_container}>
                 <CiLocationOn />
 
               </div>
-              <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/3.mp4'); setShowElements(false); setMuted(false) }}>موقع القصر</button>
+              <button >موقع القصر</button>
 
             </li>
-            <li>
+            <li onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/2.mp4'); setShowElements(false); setMuted(false) }}>
 
               <div className={styles.icon_container}>
                 <MdCalendarMonth />
 
               </div>
-              <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/2.mp4'); setShowElements(false); setMuted(false) }}>تاريخ بناء القصر</button>
+              <button >تاريخ بناء القصر</button>
 
 
             </li>

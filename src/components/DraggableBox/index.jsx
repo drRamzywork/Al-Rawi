@@ -49,7 +49,7 @@ const DraggableBox = () => {
       />
 
 
-      <Questions
+      {/* <Questions
         showElements={showElements}
         setShowElements={setShowElements}
 
@@ -60,7 +60,7 @@ const DraggableBox = () => {
         currentVideo={currentVideo}
 
 
-      />
+      /> */}
 
       <BottomSheet
         isClosed={isClosed}
