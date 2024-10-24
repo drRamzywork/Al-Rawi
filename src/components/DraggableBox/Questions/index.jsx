@@ -21,21 +21,25 @@ const Questions = ({ showQuestions
 
 
 
-  function onDragEnd(event, info) {
-    // Close menu if dragged down by more than 50px or dragged down quickly
-    const shouldClose = info.point.y > 394.20001220703125 || info.velocity.y > 394.20001220703125;
-    // const shouldClose = info.point.y > 2 || info.velocity.y > 2000000000;
+  // function onDragEnd(event, info) {
+  //   // Close menu if dragged down by more than 50px or dragged down quickly
+  //   const shouldClose = info.point.y > 394.20001220703125 || info.velocity.y > 394.20001220703125;
+  //   // const shouldClose = info.point.y > 2 || info.velocity.y > 2000000000;
 
-    console.log(info.point.y, 'shouldClose')
-    if (shouldClose) {
-      controls.start("hidden");
-      setShowQuestions(false);
+  //   console.log(info.point.y, 'shouldClose')
+  //   if (shouldClose) {
+  //     controls.start("hidden");
+  //     setShowQuestions(false);
 
-      onClose();
-    } else {
-      controls.start("visible");
-    }
-  }
+  //     onClose();
+  //   } else {
+  //     controls.start("visible");
+  //   }
+  // }
+
+
+
+
 
   useEffect(() => {
     if (showQuestions) {

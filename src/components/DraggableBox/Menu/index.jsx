@@ -100,15 +100,6 @@ const Menu = ({
       </div>
 
 
-      {/* <div className="btns_container">
-
-        <button
-          onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/2.mp4'); setIsClosed(true); setMuted(false) }}> إلي أي العصور يعود قصر عروة ؟</button>
-        <button
-          onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/3.mp4'); setIsClosed(true); setMuted(false) }}> أين تقع قصور عروة بن الزبير ؟</button>
-        <button
-          onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/4.mp4'); setIsClosed(true); setMuted(false) }}>ما هي أهم المعالم الأثرية في قصور عروة بن الزبير؟</button>
-      </div> */}
 
       <div className={styles.menu_container}>
 
