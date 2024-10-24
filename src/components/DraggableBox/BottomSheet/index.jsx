@@ -17,8 +17,9 @@ function usePrevious(value) {
 
 const BottomSheet = ({ isClosed, setIsClosed, currentVideo
   , setCurrentVideo, setMuted }) => {
-
   const [isOpen, setIsOpen] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(true);
+
   function onClose() {
     setIsOpen(false);
   }
@@ -162,13 +163,13 @@ const BottomSheet = ({ isClosed, setIsClosed, currentVideo
             <ul>
               <li>
 
-                <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/3.mp4'); setIsOpen(true); setMuted(false) }}>تبوك</button>
+                <button >تبوك</button>
 
               </li>
               <li>
 
 
-                <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/2.mp4'); setIsOpen(true); setMuted(false) }}>المدينة المنورة</button>
+                <button >المدينة المنورة</button>
 
 
               </li>
@@ -178,7 +179,7 @@ const BottomSheet = ({ isClosed, setIsClosed, currentVideo
               <li>
 
 
-                <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/2.mp4'); setIsOpen(true); setMuted(false) }}>الطائف</button>
+                <button >الطائف</button>
 
 
               </li>
