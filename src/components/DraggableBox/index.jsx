@@ -7,13 +7,14 @@ import { RiArrowUpDoubleFill } from 'react-icons/ri';
 import BottomSheet from './BottomSheet';
 import VideoComponent from './VideoComponent';
 import Menu from './Menu';
+import Questions from './Questions';
 
 
 const DraggableBox = () => {
   const [isClosed, setIsClosed] = useState(true);
   const [currentVideo, setCurrentVideo] = useState('https://toot.one/rawai/ar/1.mp4');
   const [muted, setMuted] = useState(true);
-  const [showElements, setShowElements] = useState(false); // change it to false
+  const [showElements, setShowElements] = useState(false);
 
 
   return (
@@ -27,16 +28,20 @@ const DraggableBox = () => {
         setIsClosed={setIsClosed}
         showElements={showElements}
         setShowElements={setShowElements}
+
+
       />
 
-      <button className="ButtonOpenSheet" onClick={() => setIsClosed(false)}>
+      {/* <button className="ButtonOpenSheet" onClick={() => setIsClosed(false)}>
         <RiArrowUpDoubleFill />
-      </button>
+      </button> */}
 
 
       <Menu
         showElements={showElements}
         setShowElements={setShowElements}
+
+
         setIsClosed={setIsClosed}
         setCurrentVideo={setCurrentVideo}
         setMuted={setMuted}
@@ -44,7 +49,18 @@ const DraggableBox = () => {
       />
 
 
+      <Questions
+        showElements={showElements}
+        setShowElements={setShowElements}
 
+
+        setIsClosed={setIsClosed}
+        setCurrentVideo={setCurrentVideo}
+        setMuted={setMuted}
+        currentVideo={currentVideo}
+
+
+      />
 
       <BottomSheet
         isClosed={isClosed}

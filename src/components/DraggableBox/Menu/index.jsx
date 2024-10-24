@@ -2,6 +2,8 @@ import React, { useEffect, useRef, } from 'react'
 import { motion, useAnimation } from 'framer-motion';
 import { IoClose } from 'react-icons/io5';
 import styles from './index.module.scss';
+import { CiLocationOn } from "react-icons/ci";
+import { MdCalendarMonth } from "react-icons/md";
 
 
 
@@ -69,7 +71,7 @@ const Menu = ({
         left: 0,
         right: 0,
         display: "inline-block",
-        backgroundColor: "white",
+        backgroundColor: "red",
         width: "100%",  // Set width to full screen
         height: "fit-content",  // Dynamically adjust height based on content
         border: "1px solid #E0E0E0",
@@ -111,19 +113,31 @@ const Menu = ({
       <div className={styles.menu_container}>
 
         <div className={styles.question}>
-          <h2> أريد أن أعرف معلومات عن </h2>
+          <h2> عن ماذا أروي</h2>
         </div>
         <div className={styles.options}>
           <ul>
             <li>
+              <div className={styles.icon_container}>
+                <CiLocationOn />
+
+              </div>
               <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/3.mp4'); setShowElements(false); setMuted(false) }}>موقع القصر</button>
+
             </li>
             <li>
-              <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/2.mp4'); setShowElements(false); setMuted(false) }}>متى بني القصر</button>
+
+              <div className={styles.icon_container}>
+                <MdCalendarMonth />
+
+              </div>
+              <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/2.mp4'); setShowElements(false); setMuted(false) }}>تاريخ بناء القصر</button>
+
+
             </li>
           </ul>
         </div>
-        <div className={styles.question}>
+        {/* <div className={styles.question}>
           <h2> أريد التعرف على؟</h2>
         </div>
 
@@ -136,7 +150,7 @@ const Menu = ({
               <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/5.mp4'); setShowElements(false); setMuted(false) }}>سبب بناء القصر</button>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </motion.div>
   )

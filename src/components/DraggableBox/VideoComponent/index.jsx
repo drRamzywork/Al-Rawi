@@ -2,8 +2,9 @@ import React, { useEffect, useRef } from 'react'
 import styles from './index.module.scss';
 
 const VideoComponent = ({ currentVideo, muted
-  , setMuted, isClosed, setIsClosed, showElements, setShowElements }) => {
-
+  , setMuted, isClosed, setIsClosed, showElements, setShowElements, showQuestions
+  , }) => {
+  console.log(showQuestions, 'showQuestions')
   const videoRef = useRef(null);
 
   const handleVideoEnd = () => {
@@ -32,15 +33,15 @@ const VideoComponent = ({ currentVideo, muted
 
 
 
-      if (isClosed === false) {
+      if (isClosed === false | showQuestions === false) {
         videoRef.current.pause();
       }
 
     }
 
-  }, [currentVideo, muted, isClosed]);
+  }, [currentVideo, muted, isClosed, showQuestions]);
 
-
+  console.log(isClosed, "showQuestions 22")
 
 
   // Show MenuLogic
@@ -66,7 +67,8 @@ const VideoComponent = ({ currentVideo, muted
       const currentTime = event.target.currentTime;
 
       // Set showElements to true only if the current time is near 5 seconds
-      if (currentTime >= 4.9 && currentTime <= 5.1) {
+      // if (currentTime >= 4.9 && currentTime <= 5.1) {
+      if (currentTime >= 9.9 && currentTime <= 10.1) {
         setShowElements(true);
       }
     };
@@ -84,7 +86,6 @@ const VideoComponent = ({ currentVideo, muted
   }, [setShowElements, currentVideo]);
 
 
-  console.log(showElements, "setShowElementssetShowElements")
 
   return (
     <>

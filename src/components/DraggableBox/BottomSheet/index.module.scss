@@ -5,15 +5,29 @@
   align-items: center;
 
   .question {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 16px;
+
     h2 {
       color: rgb(79 95 111);
       font-size: 32px;
       font-weight: bold;
-      margin-bottom: 24px;
+      margin-bottom: 8px;
+    }
+
+    span {
+      color: #896e61;
+      font-size: 32px;
+      font-weight: bold;
     }
   }
 
   .options {
+    width: 100%;
+    max-width: 320px;
     ul {
       padding: 0;
 
@@ -25,28 +39,19 @@
         margin-bottom: 16px;
         button {
           margin-bottom: 16px;
-          color: rgb(110 94 93);
+          color: #896e61;
           border: none;
           font-size: 24px;
           font-weight: 600;
           background-color: transparent;
-          border-radius: 4px;
 
           transition: all 0.3s ease-in-out;
-
+          width: 100%;
+          background-color: white;
           // &:hover {
-          //   background-color: white;
 
           //   color: #896e61;
           // }
-        }
-
-        .icon_container {
-          svg {
-            color: white;
-            width: 80px;
-            height: 80px;
-          }
         }
       }
     }

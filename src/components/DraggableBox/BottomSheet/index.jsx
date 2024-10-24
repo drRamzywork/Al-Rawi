@@ -2,8 +2,9 @@ import React, { useState, useRef, useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion';
 import { IoClose } from 'react-icons/io5';
 import { RiArrowUpSLine, RiArrowDownSLine, } from 'react-icons/ri';
-
-
+import styles from './index.module.scss'
+import { MdCalendarMonth } from 'react-icons/md';
+import { CiLocationOn } from 'react-icons/ci';
 
 function usePrevious(value) {
   const previousValueRef = useRef();
@@ -86,7 +87,7 @@ const BottomSheet = ({ isClosed, setIsClosed, currentVideo
         initial="hidden"
         animate={controls}
         className={'bottom_sheet_container'}
-
+        id='menu'
         transition={{
           type: "spring",
           damping: 40,
@@ -136,17 +137,55 @@ const BottomSheet = ({ isClosed, setIsClosed, currentVideo
 
 
         </div>
-
+        {/* 
         <div className="btns_container">
 
           <button className={currentVideo === 'https://toot.one/rawai/ar/2.mp4' ? 'active' : ''}
             onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/2.mp4'); setIsClosed(true); setMuted(false) }}> إلي أي العصور يعود قصر عروة ؟</button>
+
           <button className={currentVideo === 'https://toot.one/rawai/ar/3.mp4' ? 'active' : ''}
             onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/3.mp4'); setIsClosed(true); setMuted(false) }}> أين تقع قصور عروة بن الزبير ؟</button>
+
           <button className={currentVideo === 'https://toot.one/rawai/ar/4.mp4' ? 'active' : ''}
             onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/4.mp4'); setIsClosed(true); setMuted(false) }}>ما هي أهم المعالم الأثرية في قصور عروة بن الزبير؟</button>
-        </div>
+        </div> */}
 
+
+        <div className={styles.menu_container}>
+
+          <div className={styles.question}>
+            <h2> اختبار المعلومات</h2>
+
+            <span>أين تقع قصور عروة ؟</span>
+          </div>
+          <div className={styles.options}>
+            <ul>
+              <li>
+
+                <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/3.mp4'); setIsOpen(true); setMuted(false) }}>تبوك</button>
+
+              </li>
+              <li>
+
+
+                <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/2.mp4'); setIsOpen(true); setMuted(false) }}>المدينة المنورة</button>
+
+
+              </li>
+
+
+
+              <li>
+
+
+                <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/2.mp4'); setIsOpen(true); setMuted(false) }}>الطائف</button>
+
+
+              </li>
+            </ul>
+          </div>
+
+        </div>
       </motion.div >
     </>
   )
