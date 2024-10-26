@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 
 const VideoComponent = ({ currentVideo, muted
   , setMuted, isClosed, setIsClosed, showElements, setShowElements,
-  setShowNewMenu
+  showNewMenu, setShowNewMenu
   , }) => {
   const videoRef = useRef(null);
 
@@ -36,17 +36,23 @@ const VideoComponent = ({ currentVideo, muted
 
 
 
-      if (isClosed === false) {
+      // if (isClosed === false) {
+      //   videoRef.current.pause();
+      // }
+
+      // if (showElements === true) {
+      //   videoRef.current.pause();
+      // }
+      if (showNewMenu === true) {
         videoRef.current.pause();
       }
 
-      if (showElements === true) {
-        videoRef.current.pause();
-      }
+      console.log(showNewMenu, "showNewMenu222")
+
 
     }
 
-  }, [currentVideo, muted, isClosed, showElements]);
+  }, [currentVideo, muted, isClosed, showElements, showNewMenu]);
 
 
 
@@ -70,12 +76,15 @@ const VideoComponent = ({ currentVideo, muted
 
   useEffect(() => {
     const handleTimeUpdate = (event) => {
-      const currentTime = event.target.currentTime;
-
+      // const currentTime = event.target.currentTime;
+      const currentTime = Math.floor(event.target.currentTime); // تقريب القيمة للأقرب للأسفل
+      console.log(currentTime, "currentTime")
       // Set showElements to true only if the current time is near 5 seconds
       // if (currentTime >= 4.9 && currentTime <= 5.1) {
-      if (currentTime >= 9.9 && currentTime <= 10.1) {
+      // if (currentTime >= 9.9 && currentTime <= 10.1) {
+      if (currentTime === 10) {
         // setShowElements(true);
+
         setIsClosed(false);
         setShowNewMenu(true)
 

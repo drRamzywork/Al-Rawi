@@ -18,9 +18,19 @@ const DraggableBox = () => {
   const [showNewMenu, setShowNewMenu] = useState(false);
 
 
-
   return (
     <div className={styles.main_container}>
+
+
+
+
+      {showNewMenu !== true &&
+        <div className={styles.openShowMenu} onClick={() => setShowNewMenu(true)}>
+          <img src="/assets/imgs/003.png" alt="" />
+        </div>
+
+      }
+
 
       <VideoComponent
         muted={muted}
@@ -30,6 +40,7 @@ const DraggableBox = () => {
         setIsClosed={setIsClosed}
         showElements={showElements}
         setShowElements={setShowElements}
+
 
 
         showNewMenu={showNewMenu}

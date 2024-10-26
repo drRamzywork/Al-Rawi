@@ -30,4 +30,17 @@
     top: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .openShowMenu {
+    position: absolute;
+    top: 24px;
+    left: 16px;
+
+    img {
+      width: 33px;
+      height: 33px;
+    }
+
+    z-index: 9999;
+  }
 }
