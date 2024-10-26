@@ -75,20 +75,25 @@ const VideoComponent = ({ currentVideo, muted
 
 
   useEffect(() => {
+
     const handleTimeUpdate = (event) => {
-      // const currentTime = event.target.currentTime;
-      const currentTime = Math.floor(event.target.currentTime); // تقريب القيمة للأقرب للأسفل
+      const currentTime = event.target.currentTime;
+      // const currentTime = Math.floor(event.target.currentTime);
       console.log(currentTime, "currentTime")
       // Set showElements to true only if the current time is near 5 seconds
       // if (currentTime >= 4.9 && currentTime <= 5.1) {
-      // if (currentTime >= 9.9 && currentTime <= 10.1) {
-      if (currentTime === 10) {
+      if (currentTime >= 9.9 && currentTime <= 10.1) {
+        // if (currentTime === 10) {
         // setShowElements(true);
 
         setIsClosed(false);
         setShowNewMenu(true)
 
       }
+
+
+
+
     };
 
     const video = videoRef.current;
@@ -102,6 +107,7 @@ const VideoComponent = ({ currentVideo, muted
       }
     };
   }, [setShowElements, currentVideo, setShowNewMenu]);
+
 
 
 

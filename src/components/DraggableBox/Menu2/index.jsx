@@ -337,7 +337,7 @@ const Menu2 = ({ showNewMenu, setShowNewMenu }) => {
             style={{
               position: 'fixed',
               top: '9%',
-              left: '0%',
+              left: '5%',
               transform: 'translate(-50%, -50%)',
               width: '80%',
               maxWidth: '600px',
