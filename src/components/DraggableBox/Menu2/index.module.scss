@@ -130,6 +130,7 @@
   position: relative;
   z-index: 99;
   width: 100%;
+  padding-bottom: 34px;
 
   .question {
     display: flex;
@@ -164,6 +165,7 @@
           border-radius: 4px;
           width: 100%;
           transition: all 0.3s ease-in-out;
+          line-height: 48px;
         }
       }
     }

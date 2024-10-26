@@ -319,7 +319,7 @@ const Menu2 = ({ showNewMenu, setShowNewMenu }) => {
       {!isCorrect && (
         <>
           {showNewMenu &&
-            <div className={styles.layer} />
+            <div className={styles.layer} onClick={() => setShowNewMenu(false)} />
           }
           <motion.div
             initial="hidden"
@@ -336,8 +336,8 @@ const Menu2 = ({ showNewMenu, setShowNewMenu }) => {
             }}
             style={{
               position: 'fixed',
-              top: '21%',
-              left: '6%',
+              top: '9%',
+              left: '0%',
               transform: 'translate(-50%, -50%)',
               width: '80%',
               maxWidth: '600px',

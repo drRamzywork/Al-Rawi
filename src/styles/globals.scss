@@ -220,7 +220,8 @@ body {
 
   .ButtonGroup {
     position: absolute;
-    left: 16px;
+    left: 8px;
+    z-index: 99;
   }
 }
 
