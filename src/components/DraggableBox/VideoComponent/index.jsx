@@ -2,13 +2,16 @@ import React, { useEffect, useRef } from 'react'
 import styles from './index.module.scss';
 
 const VideoComponent = ({ currentVideo, muted
-  , setMuted, isClosed, setIsClosed, showElements, setShowElements, showQuestions
+  , setMuted, isClosed, setIsClosed, showElements, setShowElements,
+  setShowNewMenu
   , }) => {
-  console.log(showQuestions, 'showQuestions')
   const videoRef = useRef(null);
 
   const handleVideoEnd = () => {
-    setIsClosed(false);
+    // setIsClosed(false);
+    // setShowElements(true);
+    setShowElements(true);
+
   };
   const handleUnmute = () => {
     if (videoRef.current) {
@@ -33,15 +36,18 @@ const VideoComponent = ({ currentVideo, muted
 
 
 
-      if (isClosed === false | showQuestions === false) {
+      if (isClosed === false) {
+        videoRef.current.pause();
+      }
+
+      if (showElements === true) {
         videoRef.current.pause();
       }
 
     }
 
-  }, [currentVideo, muted, isClosed, showQuestions]);
+  }, [currentVideo, muted, isClosed, showElements]);
 
-  console.log(isClosed, "showQuestions 22")
 
 
   // Show MenuLogic
@@ -69,7 +75,10 @@ const VideoComponent = ({ currentVideo, muted
       // Set showElements to true only if the current time is near 5 seconds
       // if (currentTime >= 4.9 && currentTime <= 5.1) {
       if (currentTime >= 9.9 && currentTime <= 10.1) {
-        setShowElements(true);
+        // setShowElements(true);
+        setIsClosed(false);
+        setShowNewMenu(true)
+
       }
     };
 
@@ -83,7 +92,7 @@ const VideoComponent = ({ currentVideo, muted
         video.removeEventListener('timeupdate', handleTimeUpdate);
       }
     };
-  }, [setShowElements, currentVideo]);
+  }, [setShowElements, currentVideo, setShowNewMenu]);
 
 
 

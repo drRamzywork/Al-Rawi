@@ -210,13 +210,37 @@ body {
   .Navbar {
     margin-bottom: 0 !important;
     justify-content: center !important;
+    position: relative;
+    height: fit-content !important;
   }
 
   &.bottom_sheet_container {
     background-color: rgb(181 169 169) !important;
   }
+
+  .ButtonGroup {
+    position: absolute;
+    left: 16px;
+  }
 }
 
+#menu2 {
+  .Navbar {
+    margin-bottom: 0 !important;
+    justify-content: center !important;
+    position: relative;
+    height: fit-content !important;
+  }
+
+  &.bottom_sheet_container {
+    background-color: rgb(181 169 169) !important;
+  }
+
+  .ButtonGroup {
+    position: absolute;
+    right: 16px;
+  }
+}
 .CloseIcon {
   color: #616161;
   transition: color 0.2s ease;
@@ -224,6 +248,11 @@ body {
   cursor: pointer;
   svg {
     color: white;
+    width: 33px;
+    height: 33px;
+  }
+
+  img {
     width: 33px;
     height: 33px;
   }

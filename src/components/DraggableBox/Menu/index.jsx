@@ -20,7 +20,9 @@ const Menu = ({
     setShowElements(false);
   }
 
-
+  const handleClickAnser = () => {
+    setIsClosed(true)
+  }
 
   function onDragEnd(event, info) {
     // Close menu if dragged down by more than 50px or dragged down quickly
@@ -60,7 +62,7 @@ const Menu = ({
       }}
       variants={{
         visible: { y: 0 },  // Open state
-        hidden: { y: "100%" },  // Closed state, pushes it out of the screen
+        hidden: { y: "130%" },  // Closed state, pushes it out of the screen
       }}
       dragConstraints={{ top: 0 }}  // Allows dragging only downward
       dragElastic={0.05}  // Reduces elasticity for smoother drag
@@ -78,25 +80,28 @@ const Menu = ({
         boxShadow:
           "0px 2px 5px rgba(0, 0, 0, 0.06), 0px 2px 13px rgba(0, 0, 0, 0.12)",
         borderRadius: "13px 13px 0px 0px",
-        overflow: "hidden",
+        // overflow: "hidden",
         zIndex: 1000
       }}
-
       id='menu'
-
       dir='rtl'
     >
 
       <div className="Navbar">
-        <div className="ButtonGroup">
 
-          <span className="CloseIcon" onClick={() => setShowElements(false)}>
-            <IoClose />
-          </span>
+
+        <div className={styles.img_container}>
+          <img src="/assets/imgs/004.png" alt="" />
         </div>
 
 
+        <div className="ButtonGroup">
+          <span className="CloseIcon" onClick={() => setShowElements(false)}>
+            {/* <IoClose /> */}
+            <img src="/assets/imgs/003.png" alt="" />
 
+          </span>
+        </div>
       </div>
 
 
@@ -106,20 +111,22 @@ const Menu = ({
         <div className={styles.question}>
           <h2> عن ماذا أروي</h2>
         </div>
+
         <div className={styles.options}>
           <ul>
             <li onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/3.mp4'); setShowElements(false); setMuted(false) }}>
               <div className={styles.icon_container}>
-                <CiLocationOn />
+                <img src="/assets/imgs/location.png" alt="" />
 
               </div>
               <button >موقع القصر</button>
 
             </li>
+
             <li onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/2.mp4'); setShowElements(false); setMuted(false) }}>
 
               <div className={styles.icon_container}>
-                <MdCalendarMonth />
+                <img src="/assets/imgs/calendar.png" alt="" />
 
               </div>
               <button >تاريخ بناء القصر</button>
@@ -128,21 +135,8 @@ const Menu = ({
             </li>
           </ul>
         </div>
-        {/* <div className={styles.question}>
-          <h2> أريد التعرف على؟</h2>
-        </div>
-
-        <div className={styles.options}>
-          <ul>
-            <li>
-              <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/4.mp4'); setShowElements(false); setMuted(false) }}>معالم قصر عروة</button>
-            </li>
-            <li>
-              <button onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/5.mp4'); setShowElements(false); setMuted(false) }}>سبب بناء القصر</button>
-            </li>
-          </ul>
-        </div> */}
       </div>
+
     </motion.div>
   )
 }

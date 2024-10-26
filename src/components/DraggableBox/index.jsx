@@ -3,11 +3,10 @@
 
 import React, { useState } from 'react';
 import styles from './index.module.scss';
-import { RiArrowUpDoubleFill } from 'react-icons/ri';
 import BottomSheet from './BottomSheet';
 import VideoComponent from './VideoComponent';
 import Menu from './Menu';
-import Questions from './Questions';
+import Menu2 from './Menu2';
 
 
 const DraggableBox = () => {
@@ -15,6 +14,9 @@ const DraggableBox = () => {
   const [currentVideo, setCurrentVideo] = useState('https://toot.one/rawai/ar/1.mp4');
   const [muted, setMuted] = useState(true);
   const [showElements, setShowElements] = useState(false);
+
+  const [showNewMenu, setShowNewMenu] = useState(false);
+
 
 
   return (
@@ -30,45 +32,52 @@ const DraggableBox = () => {
         setShowElements={setShowElements}
 
 
+        showNewMenu={showNewMenu}
+        setShowNewMenu={setShowNewMenu}
+
+
       />
 
-      {/* <button className="ButtonOpenSheet" onClick={() => setIsClosed(false)}>
-        <RiArrowUpDoubleFill />
-      </button> */}
 
 
       <Menu
         showElements={showElements}
         setShowElements={setShowElements}
-
-
         setIsClosed={setIsClosed}
         setCurrentVideo={setCurrentVideo}
         setMuted={setMuted}
         currentVideo={currentVideo}
       />
+
+      <Menu2
+        showNewMenu={showNewMenu}
+        setShowNewMenu={setShowNewMenu}
+        setIsClosed={setIsClosed}
+        setCurrentVideo={setCurrentVideo}
+        setMuted={setMuted}
+        currentVideo={currentVideo}
+      />
+
+
+
 
 
       {/* <Questions
         showElements={showElements}
         setShowElements={setShowElements}
-
-
         setIsClosed={setIsClosed}
         setCurrentVideo={setCurrentVideo}
         setMuted={setMuted}
         currentVideo={currentVideo}
-
-
       /> */}
 
-      <BottomSheet
+      {/* <BottomSheet
         isClosed={isClosed}
         setIsClosed={setIsClosed}
         currentVideo={currentVideo}
         setCurrentVideo={setCurrentVideo}
         setMuted={setMuted}
-      />
+      /> */}
 
     </div>
   );

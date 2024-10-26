@@ -4,7 +4,7 @@
   // left: 50%;
   // right: 50%;
   width: 210px;
-  margin-top: -140px;
+  margin-top: -40px;
 
   img {
     width: 100%;
@@ -17,20 +17,30 @@
   flex-direction: column;
   padding: 0 16px;
   align-items: center;
-  margin-top: -30px;
   position: relative;
   z-index: 99;
 
   .question {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    span,
     h2 {
       color: rgb(79 95 111);
       font-size: 32px;
       font-weight: bold;
       margin-bottom: 24px;
     }
+
+    span {
+      color: #896e61;
+    }
   }
 
   .options {
+    width: 250px;
+
     ul {
       padding: 0;
 
@@ -56,6 +66,9 @@
 
           //   color: #896e61;
           // }
+
+          background-color: white;
+          width: 100%;
         }
 
         .icon_container {

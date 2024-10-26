@@ -1,18 +1,25 @@
 import "@/styles/globals.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Cairo } from "next/font/google";
 import "react-spring-bottom-sheet/dist/style.css";
 import "@sergeymyssak/swipeable-bottom-sheet/lib/min.css";
+import localFont from "next/font/local";
 
-const cairo = Cairo({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "600", "700", "900", "1000"],
-  style: ["normal"],
+const Effra = localFont({
+  src: [
+    {
+      path: "../../public/assets/fonts/HelveticaNeueLT.otf",
+      weight: "500",
+      style: "normal",
+    },
+  ],
 });
 
 export default function App({ Component, pageProps }) {
+  const combinedStyles = {
+    ...Effra.style,
+  };
   return (
-    <main className={` ${cairo.className}`}>
+    <main style={combinedStyles}>
       <Component {...pageProps} />
     </main>
   );
