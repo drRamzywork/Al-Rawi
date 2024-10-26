@@ -115,10 +115,11 @@
 
 
 import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import styles from './index.module.scss';
 
-const CorrectMenu = ({ controls, isCorrect, setIsCorrect }) => {
+const CorrectMenu = ({ isCorrect, setIsCorrect }) => {
+  const controls = useAnimation();
 
   useEffect(() => {
     if (isCorrect) {

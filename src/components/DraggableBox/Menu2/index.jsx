@@ -200,7 +200,7 @@ const Menu2 = ({
   return (
     <>
       {isCorrect && (
-        <CorrectMenu controls={controls} isCorrect={isCorrect} setIsCorrect={setIsCorrect} />
+        <CorrectMenu isCorrect={isCorrect} setIsCorrect={setIsCorrect} />
       )}
 
 
