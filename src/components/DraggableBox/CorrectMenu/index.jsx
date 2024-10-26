@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion';
-import { IoClose } from 'react-icons/io5';
+import React, { useEffect } from 'react'
+import { motion } from 'framer-motion';
 import styles from './index.module.scss'
 
 const CorrectMenu = ({ controls, isCorrect, setIsCorrect }) => {
@@ -63,12 +62,9 @@ const CorrectMenu = ({ controls, isCorrect, setIsCorrect }) => {
           boxShadow:
             "0px 2px 5px rgba(0, 0, 0, 0.06), 0px 2px 13px rgba(0, 0, 0, 0.12)",
           borderRadius: "13px 13px 0px 0px",
-          // overflow: "hidden",
           zIndex: 1000
         }}
-
         id='menu'
-
         dir='rtl'
       >
 

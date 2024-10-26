@@ -1,9 +1,6 @@
-import React, { useEffect, useRef, } from 'react'
+import React, { useEffect, } from 'react'
 import { motion, useAnimation } from 'framer-motion';
-import { IoClose } from 'react-icons/io5';
 import styles from './index.module.scss';
-import { CiLocationOn } from "react-icons/ci";
-import { MdCalendarMonth } from "react-icons/md";
 
 
 
@@ -20,9 +17,7 @@ const Menu = ({
     setShowElements(false);
   }
 
-  const handleClickAnser = () => {
-    setIsClosed(true)
-  }
+
 
   function onDragEnd(event, info) {
     // Close menu if dragged down by more than 50px or dragged down quickly
@@ -114,6 +109,7 @@ const Menu = ({
 
         <div className={styles.options}>
           <ul>
+
             <li onClick={() => { setCurrentVideo('https://toot.one/rawai/ar/3.mp4'); setShowElements(false); setMuted(false) }}>
               <div className={styles.icon_container}>
                 <img src="/assets/imgs/location.png" alt="" />
@@ -133,6 +129,7 @@ const Menu = ({
 
 
             </li>
+
           </ul>
         </div>
       </div>
