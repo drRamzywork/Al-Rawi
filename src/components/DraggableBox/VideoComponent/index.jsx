@@ -12,6 +12,8 @@ const VideoComponent = ({ currentVideo, muted
     // setShowElements(true);
     setShowElements(true);
 
+    videoRef.current.pause();
+
   };
   const handleUnmute = () => {
     if (videoRef.current) {
@@ -19,7 +21,7 @@ const VideoComponent = ({ currentVideo, muted
 
       videoRef.current.play();
       if (muted === true) {
-        videoRef.current.muted = false;
+        // videoRef.current.muted = false;
       }
 
     }
@@ -47,7 +49,10 @@ const VideoComponent = ({ currentVideo, muted
         videoRef.current.pause();
       }
 
-      console.log(showNewMenu, "showNewMenu222")
+
+      if (showElements === true) {
+        videoRef.current.pause();
+      }
 
 
     }
@@ -59,54 +64,36 @@ const VideoComponent = ({ currentVideo, muted
   // Show MenuLogic
 
   // useEffect(() => {
+
   //   const handleTimeUpdate = (event) => {
-  //     if (event.target.currentTime = 5) {
-  //       setShowElements(true);
+  //     const currentTime = event.target.currentTime;
+  //     // const currentTime = Math.floor(event.target.currentTime);
+  //     console.log(currentTime, "currentTime")
+  //     // Set showElements to true only if the current time is near 5 seconds
+  //     // if (currentTime >= 4.9 && currentTime <= 5.1) {
+  //     if (currentTime >= 9.9 && currentTime <= 10.1) {
+  //       // if (currentTime === 10) {
+  //       // setShowElements(true);
+  //       setIsClosed(false);
+  //       setShowNewMenu(true)
   //     }
+
+
+
+
   //   };
 
-  //   const video = document.querySelector('video');
-  //   video.addEventListener('timeupdate', handleTimeUpdate);
+  //   const video = videoRef.current;
+  //   if (video) {
+  //     video.addEventListener('timeupdate', handleTimeUpdate);
+  //   }
 
   //   return () => {
-  //     video.removeEventListener('timeupdate', handleTimeUpdate);
+  //     if (video) {
+  //       video.removeEventListener('timeupdate', handleTimeUpdate);
+  //     }
   //   };
-  // }, []);
-
-
-  useEffect(() => {
-
-    const handleTimeUpdate = (event) => {
-      const currentTime = event.target.currentTime;
-      // const currentTime = Math.floor(event.target.currentTime);
-      console.log(currentTime, "currentTime")
-      // Set showElements to true only if the current time is near 5 seconds
-      // if (currentTime >= 4.9 && currentTime <= 5.1) {
-      if (currentTime >= 9.9 && currentTime <= 10.1) {
-        // if (currentTime === 10) {
-        // setShowElements(true);
-
-        setIsClosed(false);
-        setShowNewMenu(true)
-
-      }
-
-
-
-
-    };
-
-    const video = videoRef.current;
-    if (video) {
-      video.addEventListener('timeupdate', handleTimeUpdate);
-    }
-
-    return () => {
-      if (video) {
-        video.removeEventListener('timeupdate', handleTimeUpdate);
-      }
-    };
-  }, [setShowElements, currentVideo, setShowNewMenu]);
+  // }, [setShowElements, currentVideo, setShowNewMenu]);
 
 
 
@@ -122,7 +109,6 @@ const VideoComponent = ({ currentVideo, muted
           controls
           autoPlay
           playsInline
-          muted={muted}
           onEnded={handleVideoEnd}
         />
       </div>
@@ -132,3 +118,7 @@ const VideoComponent = ({ currentVideo, muted
 }
 
 export default VideoComponent
+
+
+
+// +++++++++++++++++++++++++++++++
